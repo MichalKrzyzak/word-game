@@ -1,7 +1,6 @@
 package com.myproject.generator;
 
 import java.util.Arrays;
-import java.util.List;
 import java.util.Scanner;
 
 public class LetterCollector {
@@ -13,9 +12,6 @@ public class LetterCollector {
     private void fetchLetters() {
         Scanner input = new Scanner(System.in);
         String userLetters = input.nextLine();
-
-        List<String> letters = Arrays.asList(userLetters.split(","));
-
-        System.out.println(letters.toString());
+        new FileParser().gatherAllWords(Arrays.asList(userLetters.split(",")));
     }
 }
