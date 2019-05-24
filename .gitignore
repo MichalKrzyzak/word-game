@@ -1,3 +1,4 @@
-wordgame.iml
+*.iml
 .idea/
 test/
+target/
