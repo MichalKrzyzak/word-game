@@ -11,7 +11,7 @@ public class LetterCollector {
 
     private void fetchLetters() {
         Scanner input = new Scanner(System.in);
-        String userLetters = input.nextLine();
+        String userLetters = input.nextLine().replace(", ", "");
         new FileParser()
                 .gatherAllWords(userLetters.chars()
                 .mapToObj(e -> (char) e)
