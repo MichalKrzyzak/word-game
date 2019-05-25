@@ -13,12 +13,13 @@ class FileParser {
             String word;
             while (bufferedReader.readLine() != null) {
                 word = bufferedReader.readLine();
-                if (wordToCharArray(word).containsAll(userChars)) {
+                if (wordToCharArray(word).equals(userChars)) {
                     System.out.println(word);
                 }
             }
         } catch (IOException e) {
             e.printStackTrace();
+        } catch (NullPointerException ignored) {
         }
     }
 
