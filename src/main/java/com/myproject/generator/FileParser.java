@@ -10,12 +10,12 @@ class FileParser {
     void gatherAllWords(List<Character> userChars) {
 
         try (BufferedReader bufferedReader = new BufferedReader(new FileReader("src\\main\\resources\\words.txt"))) {
-            String word;
             while (bufferedReader.readLine() != null) {
-                word = bufferedReader.readLine();
-                if (wordToCharArray(word).equals(userChars)) {
+                String word = bufferedReader.readLine();
+                if (userChars.containsAll(wordToCharArray(word))) {
                     System.out.println(word);
                 }
+                //TODO distinct number of characters so there won't be repetitions of character that occurs once.
             }
         } catch (IOException e) {
             e.printStackTrace();
