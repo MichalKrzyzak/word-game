@@ -1,4 +1,6 @@
-package com.myproject.game;
+package com.myproject.generator;
+
+import com.myproject.WordSplitter;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -6,9 +8,8 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.stream.Collectors;
 
-class FileParser {
+class FileParser implements WordSplitter {
 
     void gatherAllWords(List<Character> userChars) {
         HashMap<Character, Integer> countedUserInput = countChars(userChars);
@@ -55,11 +56,4 @@ class FileParser {
         }
         return userInput;
     }
-
-    private List<Character> wordToCharArray(String word) {
-        return word.chars()
-                .mapToObj(e -> (char) e)
-                .collect(Collectors.toList());
-    }
-
 }

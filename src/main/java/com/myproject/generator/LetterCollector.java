@@ -1,4 +1,4 @@
-package com.myproject.game;
+package com.myproject.generator;
 
 import java.util.Scanner;
 import java.util.stream.Collectors;

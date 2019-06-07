@@ -1,6 +1,7 @@
 package com.myproject;
 
-import com.myproject.game.LetterCollector;
+import com.myproject.game.LetterGenerator;
+import com.myproject.generator.LetterCollector;
 
 import java.util.Scanner;
 
@@ -22,7 +23,7 @@ class Controller {
             new LetterCollector().runGame();
             askIfAgain();
         } else if (isUserInputGenerator(userInput)) {
-            //TODO word game
+            new LetterGenerator().runGame();
             askIfAgain();
         } else if (isUserInputQuit(userInput)) {
             exitProgram();
