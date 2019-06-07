@@ -4,7 +4,12 @@ import java.util.Scanner;
 import java.util.stream.Collectors;
 
 public class LetterCollector {
-    public void askForLetters() {
+
+    public void runGame() {
+        askForLetters();
+    }
+
+    private void askForLetters() {
         System.out.println("Enter your letters below splitting them by \",\":");
         fetchLetters();
     }
