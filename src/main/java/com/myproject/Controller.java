@@ -1,6 +1,6 @@
 package com.myproject;
 
-import com.myproject.generator.LetterCollector;
+import com.myproject.game.LetterCollector;
 
 import java.util.Scanner;
 
@@ -19,10 +19,10 @@ class Controller {
 
     private void verifyUserInput(String userInput) {
         if (isUserInputGame(userInput)) {
-            new LetterCollector().askForLetters();
+            new LetterCollector().runGame();
             askIfAgain();
         } else if (isUserInputGenerator(userInput)) {
-            //TODO word generator
+            //TODO word game
             askIfAgain();
         } else if (isUserInputQuit(userInput)) {
             exitProgram();

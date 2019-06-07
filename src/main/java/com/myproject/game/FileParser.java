@@ -1,4 +1,4 @@
-package com.myproject.generator;
+package com.myproject.game;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -12,7 +12,7 @@ class FileParser {
 
     void gatherAllWords(List<Character> userChars) {
         HashMap<Character, Integer> countedUserInput = countChars(userChars);
-        try (BufferedReader bufferedReader = new BufferedReader(new FileReader("src\\main\\resources\\words.txt"))) {
+        try (BufferedReader bufferedReader = new BufferedReader(new FileReader("src\\main\\java\\resources\\words.txt"))) {
             while (bufferedReader.readLine() != null) {
                 String word = bufferedReader.readLine();
                 List<Character> characterList = wordToCharArray(word);
