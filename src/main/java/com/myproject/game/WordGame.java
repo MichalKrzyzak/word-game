@@ -2,11 +2,12 @@ package com.myproject.game;
 
 import com.myproject.WordSplitter;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.List;
 import java.util.Scanner;
+import java.util.stream.Stream;
 
 class WordGame implements WordSplitter {
     private final Scanner input1 = new Scanner(System.in);
@@ -53,20 +54,11 @@ class WordGame implements WordSplitter {
     }
 
     private boolean isUserWordReal(String userWord) {
-        boolean isWordReal = false;
-
-        try (BufferedReader bufferedReader = new BufferedReader(new FileReader("src\\main\\java\\resources\\words.txt"))) {
-            while (bufferedReader.readLine() != null) {
-                if (bufferedReader.readLine().equalsIgnoreCase(userWord)) {
-                    isWordReal = true;
-                }
-            }
-        } catch (IOException e) {
+        try (Stream<String> stream = Files.lines(Paths.get("src\\main\\java\\resources\\words.txt"))) {
+            return stream.anyMatch(e -> e.equalsIgnoreCase(userWord));
+        } catch (IOException | NullPointerException e) {
             e.printStackTrace();
             return false;
-        } catch (NullPointerException ignored) {
         }
-
-        return isWordReal;
     }
 }
