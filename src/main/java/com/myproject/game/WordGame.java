@@ -11,7 +11,7 @@ class WordGame implements WordSplitter {
     void fetchUserWord() {
         String userWord = input1.nextLine();
 
-        if (!userWord.equalsIgnoreCase("that's it")) {
+        if (!userWord.equalsIgnoreCase("that's all")) {
             verifyUserWord(userWord);
         } else {
             endGame();
@@ -21,7 +21,8 @@ class WordGame implements WordSplitter {
 
     private void verifyUserWord(String userWord) {
         if (canWordBeAccepted(userWord)) {
-            
+            userPoints++;
+            System.out.println("Good job! Go on...");
             fetchUserWord();
         } else {
             System.out.println("This word is not correct! Try another one.");
@@ -38,6 +39,6 @@ class WordGame implements WordSplitter {
     }
 
     private boolean canWordBeAccepted(String userWord) {
-
+        
     }
 }

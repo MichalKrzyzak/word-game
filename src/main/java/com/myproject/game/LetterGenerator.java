@@ -17,7 +17,7 @@ public class LetterGenerator {
         List<String> alphabetLetters = Arrays.asList("A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "R", "S", "T", "U", "W", "Z");
         List<String> generatedLetters = new ArrayList<>();
 
-        int numberOfLetters = random.nextInt(5) + 4;
+        int numberOfLetters = random.nextInt(10) + 4;
 
         for (int i = 0; i < numberOfLetters; i++) {
             String randomLetter = alphabetLetters.get(random.nextInt(alphabetLetters.size()));
